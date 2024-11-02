@@ -1,0 +1,108 @@
+.poll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #f7f8fa;
+  font-family: "Arial", sans-serif;
+  color: #333;
+
+  .poll-header-card {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffebcd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .poll-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #d2691e;
+      margin: 0;
+    }
+
+    .poll-subtitle {
+      font-size: 1em;
+      color: #666;
+      margin: 5px 0 0;
+    }
+  }
+
+  .poll-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .poll-item-card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+
+    .poll-item-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .poll-item-name {
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #424242;
+      }
+
+      .vote-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ff7043;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #ff5722;
+        }
+
+        &:disabled {
+          background-color: #bdbdbd !important;
+          color: #e0e0e0 !important;
+          cursor: not-allowed;
+          pointer-events: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .progress-bar {
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 8px;
+      margin-bottom: 5px;
+
+      .progress-bar-fill {
+        background-color: #ff7043;
+        height: 100%;
+        transition: width 0.3s ease;
+      }
+    }
+
+    .poll-vote-count {
+      font-size: 0.9em;
+      color: #666;
+      text-align: right;
+      margin-top: 5px;
+    }
+  }
+}

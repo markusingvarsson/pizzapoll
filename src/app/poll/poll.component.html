@@ -1,0 +1,36 @@
+<div class="poll-container">
+  <div class="poll-header-card">
+    <h1 class="poll-title">🍕 Ultimate Pizza Topping Party 🍕</h1>
+    <p class="poll-subtitle">
+      Who deserves the title of Pizza Party President?
+    </p>
+  </div>
+
+  <ul class="poll-list">
+    @for(pollItem of pollService.pollItems(); track pollItem.id) {
+    <li>
+      <div class="poll-item-card">
+        <div class="poll-item-details">
+          <span class="poll-item-name">{{ pollItem.name }}</span>
+          <button
+            [disabled]="pollService.hasVoted()"
+            class="vote-button"
+            (click)="pollService.vote(pollItem.id)"
+          >
+            Vote
+          </button>
+        </div>
+        <div class="progress-bar">
+          <div
+            class="progress-bar-fill"
+            [style.width.%]="pollService.calculatePercentage(pollItem.id)"
+          ></div>
+        </div>
+        <span class="poll-vote-count"
+          >{{ pollItem.numberOfVotes || 0 }} votes</span
+        >
+      </div>
+    </li>
+    }
+  </ul>
+</div>
